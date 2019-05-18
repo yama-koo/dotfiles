@@ -1,28 +1,41 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "files.insertFinalNewline": true,
-  "workbench.editor.enablePreview": false,
-  "editor.minimap.enabled": false,
-  // "tslint.autoFixOnSave": true,
-  "workbench.colorCustomizations": {
-      "editorLineNumber.activeForeground": "#00b7ff"
-  },
-  "breadcrumbs.enabled": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "indentRainbow.colors": [
-      "rgba(255, 255,   0, 0.1)",
-      "rgba(  0, 255, 255, 0.1)",
-      "rgba(255,   0, 153, 0.1)",
-      "rgba(102, 255,   0, 0.1)"
-  ],
-  "editor.tabSize": 2,
-  "gitlens.codeLens.enabled": false,
-  "todo-tree.excludeGlobs": [
-      "/usr/local/Cellar/"
-  ],
-  "explorer.confirmDragAndDrop": false,
-  "editor.formatOnSave": true,
-  "terraform.lintPath": "/usr/local/bin/tflint",
-  "window.zoomLevel": 0,
-  "window.restoreWindows": "one"
+    "workbench.startupEditor": "newUntitledFile",
+    "files.insertFinalNewline": true,
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    // "tslint.autoFixOnSave": true,
+    "workbench.colorCustomizations": {
+        "editorLineNumber.activeForeground": "#00b7ff"
+    },
+    "breadcrumbs.enabled": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "indentRainbow.colors": [
+        "rgba(255, 255,   0, 0.1)",
+        "rgba(  0, 255, 255, 0.1)",
+        "rgba(255,   0, 153, 0.1)",
+        "rgba(102, 255,   0, 0.1)"
+    ],
+    "editor.tabSize": 2,
+    "gitlens.codeLens.enabled": false,
+    "todo-tree.excludeGlobs": [
+        "/usr/local/Cellar/"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": false,
+    "terraform.lintPath": "/usr/local/bin/tflint",
+    "window.zoomLevel": 0,
+    "window.restoreWindows": "one",
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
+    ]
 }

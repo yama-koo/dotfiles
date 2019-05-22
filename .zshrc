@@ -3,6 +3,7 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
+zplug "rupa/z", use:z.sh
 
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
@@ -29,6 +30,7 @@ alias codef='code `ls | fzf`'
 alias vimf='vim `find . -maxdepth 1 -type f | fzf`'
 alias cdf='cd `find . -maxdepth 1 -type d | fzf`'
 alias catf='cat `find . -maxdepth 1 -type f | fzf`'
+alias zf="cd \`z | fzf | awk '{print \$2}'\`"
 
 alias dc='docker-compose'
 alias dce="docker exec -it \`dc ps | fzf | awk '{print \$1}'\`"
@@ -46,6 +48,9 @@ alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\`"
 
 alias gccl='gcloud container clusters list'
 alias cred="gcloud container clusters get-credentials --region \`gccl | fzf | awk '{print \$2,\$1}'\`"
+alias gpls='gcloud projects list'
+alias gpro="gcloud config set project \`gpls | fzf | awk '{print \$1}'\`"
+alias gals='gcloud auth list'
 
 alias gsls='gsutil ls'
 alias gslsf="gsls \`gsls | fzf | awk '{print \$1}'\`"

@@ -137,6 +137,12 @@ export LSCOLORS=gxfxcxdxfxegedabagacad
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# --------------------
+# golang
+# --------------------
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 zplug load
 
 autoload -U +X bashcompinit && bashcompinit

@@ -32,12 +32,18 @@ alias cdf='cd `find . -maxdepth 1 -type d | fzf`'
 alias catf='cat `find . -maxdepth 1 -type f | fzf`'
 alias zf="cd \`z | fzf | awk '{print \$2}'\`"
 
+# --------------------
+# docker
+# --------------------
 alias dc='docker-compose'
 alias dce="docker exec -it \`dc ps | fzf | awk '{print \$1}'\`"
 alias dp='docker ps'
 alias di='docker images'
 alias dv='docker volume ls'
 
+# --------------------
+# kubectl
+# --------------------
 alias kp='kubectl get pods'
 alias kd="kubectl describe pod \`kp | fzf | awk '{print \$1}'\`"
 alias ks='kubectl get services'
@@ -46,12 +52,19 @@ alias kns="kubectl config set-context $(kubectl config current-context) --namesp
 alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\`"
 alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\`"
 
+# --------------------
+# gcloud
+# --------------------
 alias gccl='gcloud container clusters list'
 alias cred="gcloud container clusters get-credentials --region \`gccl | fzf | awk '{print \$2,\$1}'\`"
 alias gpls='gcloud projects list'
 alias gpro="gcloud config set project \`gpls | fzf | awk '{print \$1}'\`"
 alias gals='gcloud auth list'
+alias gsa="gcloud config set account \`gals | rg @ | fzf | awk '{print \$2}'\`"
 
+# --------------------
+# gsutil
+# --------------------
 alias gsls='gsutil ls'
 alias gslsf="gsls \`gsls | fzf | awk '{print \$1}'\`"
 
@@ -61,6 +74,9 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+# --------------------
+# git
+# --------------------
 function rprompt-git-current-branch {
   local branch_name st branch_status
   # local result

@@ -20,6 +20,16 @@
     "todo-tree.excludeGlobs": [
         "/usr/local/Cellar/"
     ],
+    "todo-tree.tags": [
+        "TODO",
+        "FIXME",
+        "NOTE",
+        "WARNING",
+        "HACK",
+        "XXX",
+        "REVIEW",
+        "OPTIMIZE"
+    ],
     "explorer.confirmDragAndDrop": false,
     "editor.formatOnSave": false,
     "terraform.lintPath": "/usr/local/bin/tflint",

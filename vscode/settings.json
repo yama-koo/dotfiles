@@ -51,22 +51,5 @@
     "go.toolsEnvVars": {
         "GO111MODULE": "on"
     },
-    "go.lintOnSave": "package",
-    "go.buildOnSave": "package",
-    "go.formatTool": "goimports",
-    "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "diagnostics": true // for build and vet errors as you type
-    },
-    "[go]": {
-        "editor.snippetSuggestions": "none",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "gopls": {
-        "usePlaceholders": true, // add parameter placeholders when completing a function
-    },
-    "files.eol": "\n",
+    "go.formatTool": "goimports"
 }

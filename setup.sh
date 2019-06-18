@@ -7,4 +7,4 @@ do
 	ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
-ln $HOME/dotfiles/vscode/settings.json $HOME/Library/Application Support/Code/User/settings.json
+ln $HOME/dotfiles/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"

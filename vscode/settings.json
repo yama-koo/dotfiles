@@ -56,5 +56,8 @@
     "go.lintFlags": [
         "--fast"
     ],
-    "go.lintOnSave": "workspace"
+    "go.lintOnSave": "workspace",
+    "[sql]": {
+        "editor.defaultFormatter": "ms-mssql.mssql"
+    }
 }

@@ -3,7 +3,6 @@
     "files.insertFinalNewline": true,
     "workbench.editor.enablePreview": false,
     "editor.minimap.enabled": false,
-    // "tslint.autoFixOnSave": true,
     "workbench.colorCustomizations": {
         "editorLineNumber.activeForeground": "#00b7ff"
     },

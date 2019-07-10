@@ -26,6 +26,7 @@ alias history='history 1'
 alias r='ruby'
 
 alias fzf='fzf --ansi --height 40% --reverse'
+alias c='code .'
 alias codef='code `ls | fzf`'
 alias vimf='vim `find . -maxdepth 1 -type f | fzf`'
 alias cdf='cd `find . -maxdepth 1 -type d | fzf`'

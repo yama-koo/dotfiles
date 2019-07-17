@@ -37,7 +37,7 @@ alias zf="cd \`z | fzf | awk '{print \$2}'\`"
 # docker
 # --------------------
 alias dc='docker-compose'
-alias dce="docker exec -it \`dc ps | fzf | awk '{print \$1}'\`"
+alias dce="dc exec \`dc ps --services --filter status=running | fzf\`"
 alias dp='docker ps'
 alias di='docker images'
 alias dv='docker volume ls'

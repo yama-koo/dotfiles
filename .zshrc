@@ -80,14 +80,19 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # git
 # --------------------
 function rprompt-git-current-branch {
-  local branch_name st branch_status
+  local dir branch_name st branch_status
   # local result
-
-  if [ ! -e  ".git" ]; then
+  dir=`git rev-parse --show-toplevel 2> /dev/null`
+  if [[ $dir =~ fatal ]]; then
+    result=''
+    return
+  fi
+  if [ ! -e  "${dir}/.git" ]; then
     # gitで管理されていないディレクトリは何も返さない
     result=''
     return
   fi
+  # branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
   branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
   st=`git status 2> /dev/null`
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then

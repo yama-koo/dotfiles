@@ -47,6 +47,9 @@
             "autoFix": true
         }
     ],
+    "eslint.workingDirectories": [
+        {"directory": "./mailer", "changeProcessCWD": true}
+    ],
     "go.toolsEnvVars": {
         "GO111MODULE": "on"
     },

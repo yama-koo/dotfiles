@@ -79,6 +79,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # --------------------
 # git
 # --------------------
+alias gr='git reset --hard'
 function rprompt-git-current-branch {
   local dir branch_name st branch_status
   # local result

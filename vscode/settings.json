@@ -16,19 +16,19 @@
     ],
     "editor.tabSize": 2,
     "gitlens.codeLens.enabled": false,
-    "todo-tree.excludeGlobs": [
-        "/usr/local/Cellar/"
-    ],
-    "todo-tree.tags": [
-        "TODO",
-        "FIXME",
-        "NOTE",
-        "WARNING",
-        "HACK",
-        "XXX",
-        "REVIEW",
-        "OPTIMIZE"
-    ],
+    // "todo-tree.excludeGlobs": [
+    //     "/usr/local/Cellar/"
+    // ],
+    // "todo-tree.tags": [
+    //     "TODO",
+    //     "FIXME",
+    //     "NOTE",
+    //     "WARNING",
+    //     "HACK",
+    //     "XXX",
+    //     "REVIEW",
+    //     "OPTIMIZE"
+    // ],
     "explorer.confirmDragAndDrop": false,
     "editor.formatOnSave": false,
     "terraform.lintPath": "/usr/local/bin/tflint",
@@ -36,8 +36,16 @@
     "window.restoreWindows": "one",
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
-        "javascript",
-        "javascriptreact",
+        // "javascript",
+        // "javascriptreact",
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        },
         {
             "language": "typescript",
             "autoFix": true
@@ -46,9 +54,6 @@
             "language": "typescriptreact",
             "autoFix": true
         }
-    ],
-    "eslint.workingDirectories": [
-        {"directory": "./mailer", "changeProcessCWD": true}
     ],
     "go.toolsEnvVars": {
         "GO111MODULE": "on"
@@ -61,5 +66,19 @@
     "go.lintOnSave": "workspace",
     "[sql]": {
         "editor.defaultFormatter": "ms-mssql.mssql"
-    }
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "todo-tree.filtering.excludeGlobs": [
+        "/usr/local/Cellar/"
+    ],
+    "todo-tree.general.tags": [
+        "TODO",
+        "FIXME",
+        "NOTE",
+        "WARNING",
+        "HACK",
+        "XXX",
+        "REVIEW",
+        "OPTIMIZE"
+    ]
 }

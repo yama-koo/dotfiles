@@ -80,5 +80,8 @@
         "XXX",
         "REVIEW",
         "OPTIMIZE"
-    ]
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

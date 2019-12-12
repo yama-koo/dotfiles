@@ -16,19 +16,6 @@
     ],
     "editor.tabSize": 2,
     "gitlens.codeLens.enabled": false,
-    // "todo-tree.excludeGlobs": [
-    //     "/usr/local/Cellar/"
-    // ],
-    // "todo-tree.tags": [
-    //     "TODO",
-    //     "FIXME",
-    //     "NOTE",
-    //     "WARNING",
-    //     "HACK",
-    //     "XXX",
-    //     "REVIEW",
-    //     "OPTIMIZE"
-    // ],
     "explorer.confirmDragAndDrop": false,
     "editor.formatOnSave": true,
     "terraform.lintPath": "/usr/local/bin/tflint",

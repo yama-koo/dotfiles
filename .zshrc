@@ -22,7 +22,7 @@ alias cls='clear'
 alias cks='cls'
 alias grep='grep --color=auto'
 alias history='history 1'
-alias tm='tmux'
+alias t='tmux'
 
 alias r='ruby'
 

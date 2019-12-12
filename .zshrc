@@ -14,6 +14,7 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 setopt EXTENDED_HISTORY
 setopt append_history
+export LANG=en_US.UTF-8
 
 alias ls='ls -FG'
 alias dir='ls -FG'
@@ -153,12 +154,14 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 
-zplug load
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/mc mc
-
 # --------------------
 # flutter
 # --------------------
 export PATH=$HOME/Library/flutter/bin:$PATH
+
+_comp_options=(${_comp_options/NO_warnnestedvar/})
+
+zplug load
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc

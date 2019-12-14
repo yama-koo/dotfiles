@@ -14,6 +14,7 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 setopt EXTENDED_HISTORY
 setopt append_history
+setopt hist_ignore_dups 
 setopt share_history
 export LANG=en_US.UTF-8
 
@@ -166,8 +167,6 @@ export GO111MODULE=on
 # flutter
 # --------------------
 export PATH=$HOME/Library/flutter/bin:$PATH
-
-_comp_options=(${_comp_options/NO_warnnestedvar/})
 
 zplug load
 

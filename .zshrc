@@ -23,7 +23,6 @@ alias cls='clear'
 alias cks='cls'
 alias grep='grep --color=auto'
 alias history='history 1'
-alias t='tmux'
 
 alias r='ruby'
 
@@ -34,6 +33,12 @@ alias vimf='vim `find . -maxdepth 1 -type f | fzf`'
 alias cdf='cd `find . -maxdepth 1 -type d | fzf`'
 alias catf='cat `find . -maxdepth 1 -type f | fzf`'
 alias zf="cd \`z | fzf | awk '{print \$2}'\`"
+
+# --------------------
+# tmux
+# --------------------
+alias t='tmux'
+alias td='t detach-client'
 
 # --------------------
 # docker

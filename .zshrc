@@ -14,6 +14,7 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 setopt EXTENDED_HISTORY
 setopt append_history
+setopt share_history
 export LANG=en_US.UTF-8
 
 alias ls='ls -FG'
@@ -23,6 +24,7 @@ alias cls='clear'
 alias cks='cls'
 alias grep='grep --color=auto'
 alias history='history 1'
+alias s='source ~/.zshrc'
 
 alias r='ruby'
 
@@ -39,12 +41,13 @@ alias zf="cd \`z | fzf | awk '{print \$2}'\`"
 # --------------------
 alias t='tmux'
 alias td='t detach-client'
+alias ta="t a -t \`t ls | fzf | awk '{print \$1}'\` 2> /dev/null"
 
 # --------------------
 # docker
 # --------------------
 alias dc='docker-compose'
-alias dce="dc exec \`dc ps --services --filter status=running | fzf\`"
+alias dce="dc exec \`dc ps --services --filter status=running | fzf\` 2> /dev/null"
 alias dp='docker ps'
 alias di='docker images'
 alias dv='docker volume ls'

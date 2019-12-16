@@ -17,7 +17,7 @@
     "editor.tabSize": 2,
     "gitlens.codeLens.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "terraform.lintPath": "/usr/local/bin/tflint",
     "window.zoomLevel": 0,
     "window.restoreWindows": "one",

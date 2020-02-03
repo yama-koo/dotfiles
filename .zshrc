@@ -62,7 +62,7 @@ alias kd="kubectl describe pod \`kp | fzf | awk '{print \$1}'\`"
 alias ks='kubectl get services'
 alias knsls='kubectl get ns'
 alias kns="kubectl config set-context $(kubectl config current-context) --namespace=\`knsls | fzf | awk '{print \$1}'\`"
-alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\`"
+alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\`"
 
 # --------------------
@@ -91,6 +91,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # git
 # --------------------
 alias gr='git reset --hard'
+alias branch='git branch'
+alias bd="git branch -D \`git branch | fzf\`"
+
 function rprompt-git-current-branch {
   local dir branch_name st branch_status
   # local result

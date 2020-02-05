@@ -17,7 +17,7 @@
     "editor.tabSize": 2,
     "gitlens.codeLens.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "terraform.lintPath": "/usr/local/bin/tflint",
     "window.zoomLevel": 0,
     "window.restoreWindows": "one",
@@ -33,6 +33,20 @@
         "--fast"
     ],
     "go.lintOnSave": "workspace",
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        // Experimental settings
+        "completeUnimported": true, // autocomplete unimported packages
+        "deepCompletion": true, // enable deep completion
+    },
     "[sql]": {
         "editor.defaultFormatter": "ms-mssql.mssql"
     },
@@ -58,6 +72,9 @@
     },
     "dart.flutterSdkPath": "/Users/kouta/Library/flutter",
     "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     }
 }

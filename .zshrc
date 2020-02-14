@@ -92,7 +92,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # --------------------
 alias gr='git reset --hard'
 alias branch='git branch'
-alias bd="git branch -D \`git branch | fzf\`"
+alias bd="git branch -D \`git branch | fzf\` 2> /dev/null"
 
 function rprompt-git-current-branch {
   local dir branch_name st branch_status

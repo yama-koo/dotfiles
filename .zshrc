@@ -26,6 +26,7 @@ alias cks='cls'
 alias grep='grep --color=auto'
 alias history='history 1'
 alias s='source ~/.zshrc'
+alias cat='bat'
 
 alias r='ruby'
 

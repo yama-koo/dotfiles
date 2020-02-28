@@ -14,7 +14,7 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 setopt EXTENDED_HISTORY
 setopt append_history
-setopt hist_ignore_dups 
+setopt hist_ignore_dups
 setopt share_history
 export LANG=en_US.UTF-8
 
@@ -27,6 +27,7 @@ alias grep='grep --color=auto'
 alias history='history 1'
 alias s='source ~/.zshrc'
 alias cat='bat'
+alias ps='procs'
 
 alias r='ruby'
 

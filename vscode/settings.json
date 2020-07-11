@@ -6,6 +6,7 @@
     "workbench.colorCustomizations": {
         "editorLineNumber.activeForeground": "#00b7ff"
     },
+    "editor.renderLineHighlight": "gutter",
     "breadcrumbs.enabled": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "indentRainbow.colors": [
@@ -17,10 +18,9 @@
     "editor.tabSize": 2,
     "gitlens.codeLens.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "editor.formatOnSave": true,
-    "terraform.lintPath": "/usr/local/bin/tflint",
     "window.zoomLevel": 0,
     "window.restoreWindows": "one",
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
@@ -38,15 +38,15 @@
         "editor.snippetSuggestions": "none",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": true
         }
     },
-    "gopls": {
-        "usePlaceholders": true, // add parameter placeholders when completing a function
-        // Experimental settings
-        "completeUnimported": true, // autocomplete unimported packages
-        "deepCompletion": true, // enable deep completion
-    },
+    // "gopls": {
+    //     "usePlaceholders": true, // add parameter placeholders when completing a function
+    //     // Experimental settings
+    //     "completeUnimported": true, // autocomplete unimported packages
+    //     "deepCompletion": true // enable deep completion
+    // },
     "[sql]": {
         "editor.defaultFormatter": "ms-mssql.mssql"
     },
@@ -68,13 +68,27 @@
     "todo-tree.highlights.defaultHighlight": {
         "background": "ff8c00",
         "opacity": 40
-        // "foreground": "red"
     },
     "dart.flutterSdkPath": "/Users/kouta/Library/flutter",
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "todo-tree.tree.showScanModeButton": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "variable": "#00ffcc"
+        }
+    },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "tabnine.experimentalAutoImports": true
 }

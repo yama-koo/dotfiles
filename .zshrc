@@ -6,7 +6,7 @@ zplug "zsh-users/zsh-completions"
 zplug "rupa/z", use:z.sh
 
 if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
+  fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
 export HISTFILE=~/.zsh_history
@@ -60,18 +60,19 @@ alias log="dc logs -f \`dc ps --services --filter status=running | fzf\`"
 # kubectl
 # --------------------
 alias kp='kubectl get pods'
-alias kd="kubectl describe pod \`kp | fzf | awk '{print \$1}'\`"
+alias kd="kubectl describe pod \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias ks='kubectl get services'
 alias knsls='kubectl get ns'
-alias kns="kubectl config set-context $(kubectl config current-context) --namespace=\`knsls | fzf | awk '{print \$1}'\`"
+alias kcc='kubectl config current-context'
+alias kns="kubectl config set-context $(kcc) --namespace=\`knsls | fzf | awk '{print \$1}'\`"
 alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
-alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\`"
+alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 
 # --------------------
 # gcloud
 # --------------------
 alias gccl='gcloud container clusters list'
-alias cred="gcloud container clusters get-credentials --region \`gccl | fzf | awk '{print \$2,\$1}'\`"
+alias cred="gccl | fzf | awk '{print \$2,\$1}' | xargs gcloud container clusters get-credentials --region"
 alias gpls='gcloud projects list'
 alias gpro="gcloud config set project \`gpls | fzf | awk '{print \$1}'\`"
 alias gals='gcloud auth list'
@@ -115,18 +116,18 @@ function rprompt-git-current-branch {
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
     # 全てcommitされてクリーンな状態
     branch_status="%F{051}"
-  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
+    elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
     # gitに管理されていないファイルがある状態
     # branch_status="%F{red}?"
     branch_status="%F{051}?"
-  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
+    elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
     # git addされていないファイルがある状態
     # branch_status="%F{164}+"
     branch_status="%F{051}+"
-  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
+    elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
     # git commitされていないファイルがある状態
     branch_status="%F{051}!"
-  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
+    elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
     # コンフリクトが起こった状態
     echo "%F{red}!(no branch)"
     return
@@ -166,6 +167,11 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # --------------------
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+# export GOENV_ROOT=$HOME/.goenv
+# export PATH=$GOENV_ROOT/bin:$PATH
+# eval "$(goenv init -)"
+# [[ -s "/Users/kouta/.gvm/scripts/gvm" ]] && source "/Users/kouta/.gvm/scripts/gvm"
+# export GOROOT_BOOTSTRAP=$GOROOT
 export GO111MODULE=on
 
 # --------------------

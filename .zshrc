@@ -167,11 +167,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # --------------------
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-# export GOENV_ROOT=$HOME/.goenv
-# export PATH=$GOENV_ROOT/bin:$PATH
-# eval "$(goenv init -)"
-# [[ -s "/Users/kouta/.gvm/scripts/gvm" ]] && source "/Users/kouta/.gvm/scripts/gvm"
-# export GOROOT_BOOTSTRAP=$GOROOT
 export GO111MODULE=on
 
 # --------------------

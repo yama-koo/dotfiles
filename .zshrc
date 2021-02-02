@@ -64,19 +64,27 @@ alias kd="kubectl describe pod \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias ks='kubectl get services'
 alias knsls='kubectl get ns'
 alias kcc='kubectl config current-context'
-alias kns="kubectl config set-context $(kcc) --namespace=\`knsls | fzf | awk '{print \$1}'\`"
+alias kns="kubectl config set-context `kcc` --namespace=\`knsls | fzf | awk '{print \$1}'\`"
 alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # --------------------
 # gcloud
 # --------------------
+export CLOUDSDK_PYTHON=python2
 alias gccl='gcloud container clusters list'
 alias cred="gccl | fzf | awk '{print \$2,\$1}' | xargs gcloud container clusters get-credentials --region"
 alias gpls='gcloud projects list'
 alias gpro="gcloud config set project \`gpls | fzf | awk '{print \$1}'\`"
 alias gals='gcloud auth list'
 alias gsa="gcloud config set account \`gals | rg @ | fzf | awk '{print \$2}'\`"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kouta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kouta/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kouta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kouta/google-cloud-sdk/completion.zsh.inc'; fi
 
 # --------------------
 # gsutil

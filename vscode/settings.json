@@ -18,11 +18,11 @@
     "editor.tabSize": 2,
     "gitlens.codeLens.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "window.zoomLevel": 0,
     "window.restoreWindows": "one",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll": true,
+        "source.fixAll.eslint": true,
     },
     "go.toolsEnvVars": {
         "GO111MODULE": "on"
@@ -30,7 +30,8 @@
     "go.formatTool": "goimports",
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
-        "--fast"
+        "--config=${workspaceFolder}/.golangci.yml",
+        // "--fast"
     ],
     "go.lintOnSave": "workspace",
     "go.useLanguageServer": true,
@@ -41,14 +42,14 @@
             "source.organizeImports": true
         }
     },
-    // "gopls": {
-    //     "usePlaceholders": true, // add parameter placeholders when completing a function
-    //     // Experimental settings
-    //     "completeUnimported": true, // autocomplete unimported packages
-    //     "deepCompletion": true // enable deep completion
-    // },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        // Experimental settings
+        "completeUnimported": true, // autocomplete unimported packages
+        "deepCompletion": true // enable deep completion
+    },
     "[sql]": {
-        "editor.defaultFormatter": "ms-mssql.mssql"
+        "editor.defaultFormatter": "mtxr.sqltools"
     },
     "diffEditor.ignoreTrimWhitespace": true,
     "todo-tree.filtering.excludeGlobs": [
@@ -80,6 +81,9 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
@@ -90,5 +94,20 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "bashBeautify.tabSize": 2,
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
+    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7Z2NwMlwiLFwiY3VzdG9tTGlicmFyaWVzXCI6W1wiTC5zY3JhdGNocGFkXCJdLFwicGx1Z2luc1wiOltdLFwicmVjZW50Q29sb3JzXCI6W10sXCJmb3JtYXRXaWR0aFwiOlwiMjQwXCIsXCJjcmVhdGVUYXJnZXRcIjpmYWxzZSxcInBhZ2VGb3JtYXRcIjp7XCJ4XCI6MCxcInlcIjowLFwid2lkdGhcIjo4MjcsXCJoZWlnaHRcIjoxMTY5fSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjNmU2ZTZlXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
+    "git.suggestSmartCommit": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "files.associations": {
+        "*.html": "html"
+    },
 }

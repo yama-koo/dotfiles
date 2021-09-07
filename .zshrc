@@ -81,17 +81,20 @@ alias kcc='kubectl config current-context'
 alias kns="kubectl config set-context `kcc` --namespace=\`knsls | fzf | awk '{print \$1}'\`"
 alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
+# export PATH=$PATH:/usr/local/opt/helm@2/bin
 
 # --------------------
 # gcloud
 # --------------------
 export CLOUDSDK_PYTHON=python2
-alias gccl='gcloud container clusters list'
-alias cred="gccl | fzf | awk '{print \$2,\$1}' | xargs gcloud container clusters get-credentials --region"
+alias gcll='gcloud container clusters list'
+alias cred="gcll | fzf | awk '{print \$2,\$1}' | xargs gcloud container clusters get-credentials --region"
 alias gpls='gcloud projects list'
 alias gpro="gcloud config set project \`gpls | fzf | awk '{print \$1}'\`"
 alias gals='gcloud auth list'
 alias gsa="gcloud config set account \`gals | rg @ | fzf | awk '{print \$2}'\`"
+alias gccl='gcloud config configurations list'
+alias gcac="gcloud config configurations activate \`gccl | fzf | awk '{print \$1}'\`"
 
 # --------------------
 # gsutil

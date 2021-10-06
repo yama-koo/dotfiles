@@ -68,7 +68,7 @@ alias dce="dc exec \`dc ps --services --filter status=running | fzf\` 2> /dev/nu
 alias dp='docker ps'
 alias di='docker images'
 alias dv='docker volume ls'
-alias log="dc logs -f \`dc ps --services --filter status=running | fzf\`"
+alias log="dc logs -f \`dc ps --services --filter status=running | fzf\` 2> /dev/null"
 
 # --------------------
 # kubectl

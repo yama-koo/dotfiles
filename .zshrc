@@ -32,7 +32,8 @@ setopt hist_ignore_dups
 setopt share_history
 export LANG=en_US.UTF-8
 
-alias ls='ls -FG'
+# alias ls='ls -FG'
+alias ls='exa'
 alias dir='ls -FG'
 alias cd..='cd ..'
 alias cls='clear'
@@ -78,7 +79,7 @@ alias kd="kubectl describe pod \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias ks='kubectl get services'
 alias knsls='kubectl get ns'
 alias kcc='kubectl config current-context'
-alias kns="kubectl config set-context `kcc` --namespace=\`knsls | fzf | awk '{print \$1}'\`"
+alias kns="kubectl config set-context \`kcc\` --namespace=\`knsls | fzf | awk '{print \$1}'\`"
 alias ke="kubectl exec -it \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 alias klog="kubectl logs \`kp | fzf | awk '{print \$1}'\` 2> /dev/null"
 # export PATH=$PATH:/usr/local/opt/helm@2/bin
@@ -110,6 +111,7 @@ bindkey "^[[3~" delete-char
 alias gr='git reset --hard'
 alias branch='git branch'
 alias bd="git branch -D \`git branch | fzf\` 2> /dev/null"
+alias gch="git checkout \`branch | fzf\` 2> /dev/null"
 
 function rprompt-git-current-branch {
   local dir branch_name st branch_status
